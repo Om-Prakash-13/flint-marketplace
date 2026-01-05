@@ -9,7 +9,7 @@ const isOwner = (Model, ownerField = 'seller') =>
         }
 
         const resource = await Model.findById(resourceId);
-
+        
         if(!resource){
             throw new AppError("Resource not found.", 404);
         }
