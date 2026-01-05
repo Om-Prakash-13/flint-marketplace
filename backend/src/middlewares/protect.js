@@ -14,6 +14,7 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 
   if (!token) {
+    console.log(token);
     throw new AppError("Not authenticated", 401);
   }
 
