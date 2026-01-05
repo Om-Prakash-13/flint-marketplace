@@ -9,6 +9,9 @@ app.use("/api/auth", authRoutes);
 import sellerProductRoutes from './routes/sellerProduct.routes.js';
 app.use("/api/seller/products", sellerProductRoutes);
 
+import productStatusRoute from './routes/productStatus.routes.js';
+app.use("/api/seller/products", productStatusRoute);
+
 import errorHandler from './middlewares/errorHandler.js';
 app.use(errorHandler);
 

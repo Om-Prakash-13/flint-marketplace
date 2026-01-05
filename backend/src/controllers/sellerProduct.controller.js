@@ -30,6 +30,10 @@ export const createProduct = asyncHandler(async (req, res) => {
 
 // UPDATE PRODUCT (ownership enforced)
 export const updateProduct = asyncHandler(async (req, res) => {
+    if("status" in req.body){
+        throw new AppError("Product status cannot be changed via this endpoint", 400);
+    }
+
     const productId = req.params.id;
     if(!productId){
         throw new AppError("Product ID is required", 400);
