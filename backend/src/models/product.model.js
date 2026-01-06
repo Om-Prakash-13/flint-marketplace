@@ -78,7 +78,17 @@ const productSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "ProductGroup",
       default: null,
-    }
+    },
+
+    relatedProducts: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product"
+    }],
+
+    alsoBuyProducts: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product"
+    }],
   },
   { timestamps: true }
 );

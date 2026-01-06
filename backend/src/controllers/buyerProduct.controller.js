@@ -29,7 +29,7 @@ export const listProducts = asyncHandler(async (req, res) => {
     const buyerView = products.map( (product) => ({
         id: product._id,
         title: product.title,
-        basePrice: pr.basePrice,
+        basePrice: product.basePrice,
         images: product.images,
         category: product.category
     }));
